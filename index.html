@@ -19,15 +19,32 @@
 		<script>
 		function rock(){
 			user=1;
+			document.getElementById("user").innerHTML="<img src='rock.jpg'>";
 		}
 		function paper(){
 			user=2;
+			document.getElementById("user").innerHTML="<img src='paper.jpeg'>";
 		}
+		
 		function scissors(){
 			user=3;
+			document.getElementById("user").innerHTML="<img src='scissor.jpg'>";
 		}
 		function go(){
+			if(user==1 || user==2 || user==3){
 			comp=parseInt(Math.random()*3)+1;
+			if(comp==1){
+			document.getElementById("comp").innerHTML="<img src='rock.jpg' width='400px'>";
+			}
+			
+			else if(comp==2){
+			document.getElementById("comp").innerHTML="<img src='paper.jpeg' width='400px'>";
+			}
+			
+			else if(comp==3){
+			document.getElementById("comp").innerHTML="<img src='scissor.jpg' width='400px'>";
+			}
+		
 			if(user==comp){
 				document.getElementById("wld").innerHTML="DRAW!";
 			}
@@ -36,6 +53,7 @@
 			else if(user==1){
 				if(comp==2){
 					document.getElementById("wld").innerHTML="LOSE!";
+					
 				}
 				else if(comp==3){
 					document.getElementById("wld").innerHTML="WIN!";
@@ -60,6 +78,13 @@
 				}
 			}
 		}
+		else{
+		alert("please choose an option");
+		}
+	
+		
+		}
+		
 		</script>
 	</body>
 </html>
